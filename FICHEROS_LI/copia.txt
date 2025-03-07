@@ -1,0 +1,3 @@
+este es el fichero llamado orginal
+segunda linea del archivo 
+y tercera
