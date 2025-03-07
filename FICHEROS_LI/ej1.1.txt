@@ -1,0 +1,3 @@
+hola esta es la primera linea
+esta la segunda
+y tercera del fichero llamado ej1.1.txt

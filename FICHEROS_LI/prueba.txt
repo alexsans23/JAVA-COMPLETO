@@ -1,0 +1,3 @@
+hola buenas esta es una linea
+hola esta es la segunda linea 
+y esta la tercera del fichero llamado prueba.txt
