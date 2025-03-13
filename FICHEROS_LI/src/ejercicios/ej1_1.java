@@ -36,6 +36,7 @@ public class ej1_1 {
 			while((linea = br.readLine()) != null) {
 				System.out.println(linea);
 			}
+			br.close();
 		} catch (FileNotFoundException e) {				
 			e.printStackTrace();
 		} catch (IOException e) {

@@ -1,5 +1,8 @@
 package ejercicios;
-
+/*
+ * crea un programa que duplique el contenido de un fichero. Realiza dos versiones.
+ * a) pedir el nombre del fichero originar.txt en uno que se llame copia.txt
+ */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

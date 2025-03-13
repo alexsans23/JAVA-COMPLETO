@@ -1,5 +1,9 @@
 package ejercicios;
-
+/*
+ * Diseñar una aplicacion que pida al usuario su nombre y edad, Estos datos deben 
+ * guardarse en el fichero datos.txt. Si este fichero existe, Debe Borrarse su contenido
+ * y en caso de no exisitir debe crearse.
+ */
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -20,7 +24,7 @@ public class ej1_2 {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(f));
 			bw.write(nombre);
-			
+			bw.newLine();
 			bw.write(edad);
 			bw.close();
 		
