@@ -1,8 +1,11 @@
-package ejercicios;
+package ficheros;
+
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -21,13 +24,40 @@ public class EscrituraYLectura {
             switch (opcion) {
                 case 1:
                     System.out.println("Introduce la ruta/nombre del archivo en el que quieres escribir.");
+                    String ruta = sc.nextLine();
+                    File f = new File(ruta);
                     
+                    if (f.exists()){
+                    	 try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+                             String linea = null;
+                             while (( br.readLine()) != null) { // Guarda la línea antes de imprimirla
+                                 System.out.println(linea);
+                             }
+                         }
+                    	BufferedWriter bw = new BufferedWriter(new FileWriter(ruta, true));
+                    	String linea = null;
+                    	while(!linea.equals("EOF")) {
+                    		System.out.println("escribe en el fichero o EOF en el caso de terminar");
+                    		linea = sc.nextLine();
+                    		bw.write(linea);
+                    	}
+                    	
+                    }else {
+                    	f.createNewFile();
+                    	BufferedWriter bw = new BufferedWriter(new FileWriter(ruta, true));
+                    	String linea = null;
+                    	while(!linea.equals("EOF")) {
+                    		System.out.println("escribe en el fichero o EOF en el caso de terminar");
+                    		linea = sc.nextLine();
+                    		bw.write(linea);
+                    	}
+                    }
                     break;
-
+                    
                 case 2:
                     System.out.println("Introduce la ruta/nombre del fichero que quieres leer:");
-                    String ruta = sc.nextLine(); // Permite capturar nombres de archivo con espacios
-                    File f = new File(ruta);
+                    ruta = sc.nextLine(); // Permite capturar nombres de archivo con espacios
+                    f = new File(ruta);
 
                     if (f.exists()) {
                         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
